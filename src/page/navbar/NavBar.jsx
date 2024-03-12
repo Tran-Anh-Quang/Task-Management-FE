@@ -9,8 +9,8 @@ const NavBar = () => {
             <p className='font-bold text-lg'>Dino Task Manager</p>
 
             <div className='flex items-center gap-5'>
-                <p>Welcome back, Dino</p>
-                <Avatar>C</Avatar>
+                <p> Dino</p>
+                <Avatar sx={{ bgcolor: '#c24dd0' }} className='bg-[#c24dd0]'>C</Avatar>
             </div>
         </div>
     );

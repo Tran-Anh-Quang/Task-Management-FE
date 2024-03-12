@@ -7,14 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, #1a0b19, #150d2d, #162134) !important;
   color: White !important;
-  overflow-x: hidden !important;
   width: 100vw !important;
+  overflow-x: hidden !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 @tailwind base;
 @tailwind components;
