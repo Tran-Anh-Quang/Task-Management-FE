@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar } from '@mui/material';
+import { Avatar, Button } from '@mui/material';
 import './SideBar.css'
 
 const menu = [
@@ -15,6 +15,9 @@ const role = "ROLE_ADMIN"
 
 const SideBar = () => {
     const [activeMenu, setActiveMenu] = useState("HOME");
+    const logout = () => {
+        console.log("logout")
+    }
     return (
         <div className='card min-h-[85vh] flex flex-col justify-center fixed w-[20vw]'>
             <div className='space-y-5 h-full'>
@@ -29,6 +32,9 @@ const SideBar = () => {
                         .map((item) => <p className={`py-3 px-5 rounded-full text-center 
                         cursor-pointer ${activeMenu === item.name ? "activeMenuItem" : "menuItem"}`} onClick={() => setActiveMenu(item.name)} >{item.name}</p>)
                 }
+                <Button onClick={ logout } sx={{ padding: ".7rem", borderRadius: "2rem" }} fullWidth className='logoutButton'>
+                    Logout
+                </Button>
             </div>
         </div>
     );
