@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import UserList from '../UserList';
 import SubmissionList from './SubmissionList';
+import EditTaskForm from './EditTaskCard';
 
 const role = "ROLE_ADMIN"
 const TaskCard = () => {
@@ -30,15 +31,21 @@ const TaskCard = () => {
         setOpenSubmissionList(false);
     }
 
+    const [openUpdateTaskForm, setOpenUpdateTaskForm] = useState(false);
+    const handleCloseUpdateTaskForm= () => {
+        setOpenUpdateTaskForm(false);
+    }
+
     const handleOpenSubmissionList = () => {
         setOpenSubmissionList(true);
         handleMenuClose();
     }
     const handleOpenUpdateTaskModel = () => {
-
+        setOpenUpdateTaskForm(true);
+        handleMenuClose();
     }
     const handleDeleteTask = () => {
-
+        handleMenuClose();
     }
 
     return (
@@ -96,6 +103,7 @@ const TaskCard = () => {
             </div>
             <UserList open={openUserList} handleClose={handleCloseUserList} />
             <SubmissionList open={openSubmissionList} handleClose={handleCloseSubmissionList} />
+            <EditTaskForm open={openUpdateTaskForm} handleClose={handleCloseUpdateTaskForm} />
         </div>
     );
 };
