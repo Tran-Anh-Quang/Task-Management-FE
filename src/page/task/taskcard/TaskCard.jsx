@@ -27,23 +27,23 @@ const TaskCard = () => {
         handleMenuClose();
     }
     const [openSubmissionList, setOpenSubmissionList] = useState(false);
-    const handleCloseSubmissionList= () => {
+    const handleCloseSubmissionList = () => {
         setOpenSubmissionList(false);
     }
-
-    const [openUpdateTaskForm, setOpenUpdateTaskForm] = useState(false);
-    const handleCloseUpdateTaskForm= () => {
-        setOpenUpdateTaskForm(false);
-    }
-
     const handleOpenSubmissionList = () => {
         setOpenSubmissionList(true);
         handleMenuClose();
+    }
+
+    const [openUpdateTaskForm, setOpenUpdateTaskForm] = useState(false);
+    const handleCloseUpdateTaskForm = () => {
+        setOpenUpdateTaskForm(false);
     }
     const handleOpenUpdateTaskModel = () => {
         setOpenUpdateTaskForm(true);
         handleMenuClose();
     }
+
     const handleDeleteTask = () => {
         handleMenuClose();
     }
