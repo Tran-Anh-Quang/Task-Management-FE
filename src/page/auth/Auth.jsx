@@ -13,7 +13,7 @@ const Auth = () => {
             <div className='box lg:max-w-4xl'>
                 <div className={`cover ${isRegister ? "rotate-active" : ""}`}>
                     <div className='front'>
-                        <img src='' alt='' />
+                        <img src='https://th.bing.com/th/id/R.fd7ee12cef5592a445403b4ffb33c182?rik=TYNv1gkkSzqb7w&pid=ImgRaw&r=0' alt='' />
                         <div className='text'>
                             <span className='text-1'>
                                 Success is built upon well-organized tasks
@@ -24,7 +24,7 @@ const Auth = () => {
                         </div>
                     </div>
                     <div className='back'>
-                        <img src='' alt='' />
+                        <img src='https://www.mayawhite.com/wp-content/uploads/2021/06/Saturn.jpg' alt='' />
                     </div>
                 </div>
                 <div className='form h-full'>
@@ -33,7 +33,7 @@ const Auth = () => {
                             <Login togglePanel={togglePanel}/>
                         </div>
                         <div className='register-form'>
-                            <Register />
+                            <Register togglePanel={togglePanel}/>
                         </div>
                     </div>
                 </div>
