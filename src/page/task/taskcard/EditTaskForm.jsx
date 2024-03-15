@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { useEffect } from 'react';
 
 const style = {
   position: 'absolute',
@@ -73,6 +74,10 @@ export default function EditTaskForm({ handleClose, open }) {
     console.log("formData", formData, "deadline: ", formData.deadline);
     handleClose();
   }
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div>
