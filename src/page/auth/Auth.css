@@ -53,12 +53,11 @@
     height: 100%;
     width: 100%;
     background: #090013;
-    opacity: 0.4;
+    opacity: 0.15;
     z-index: 12;
 }
 
 .box .cover::after {
-    opacity: 0.3;
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
