@@ -15,8 +15,8 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchTasks({}))
-    dispatch(getUserProfile(auth.jwt || localStorage.getItem("jwt")));
-  }, [auth.jwt]);
+    dispatch(getUserProfile(auth.jwt ?? localStorage.getItem("jwt")));
+  }, [dispatch, auth?.jwt]);
 
   return (
     <ThemeProvider theme={darkTheme}>

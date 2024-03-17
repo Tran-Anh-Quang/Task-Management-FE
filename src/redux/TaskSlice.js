@@ -5,13 +5,13 @@ export const fetchTasks = createAsyncThunk("task/fetchTasks", async ({ status })
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.get(`/api/tasks`, {
+        const {data} = await api.get(`/api/tasks`, {
             params: {
                 status
             },
         });
-        console.log("fetch tasks success", response)
-        return response;
+        console.log("fetch tasks success", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -22,13 +22,13 @@ export const fetchUsersTasks = createAsyncThunk("task/fetchUsersTasks", async ({
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.get(`/api/tasks/user`, {
+        const {data} = await api.get(`/api/tasks/user`, {
             params: {
                 status
             }
         });
-        console.log("fetch users tasks success", response)
-        return response;
+        console.log("fetch users tasks success", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -39,9 +39,9 @@ export const fetchTasksById = createAsyncThunk("tasks/fetchTasksById", async ({ 
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.get(`/api/tasks/${taskId}`);
-        console.log("fetch users tasks by id success", response)
-        return response;
+        const {data} = await api.get(`/api/tasks/${taskId}`);
+        console.log("fetch users tasks by id success", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -52,9 +52,9 @@ export const createTask = createAsyncThunk("task/createTask", async (taskData) =
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.post(`/api/tasks`, taskData);
-        console.log("create task: ", response)
-        return response;
+        const { data } = await api.post(`/api/tasks`, taskData);
+        console.log("create task: ", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -65,9 +65,9 @@ export const updateTask = createAsyncThunk("task/updateTask", async ({ id, updat
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.put(`/api/tasks/${id}`, updatedTaskData);
-        console.log("update task: ", response)
-        return response;
+        const { data } = await api.put(`/api/tasks/${id}`, updatedTaskData);
+        console.log("update task: ", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -78,9 +78,9 @@ export const assignedTaskToUser = createAsyncThunk("task/assignedTaskToUser", as
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.put(`/api/tasks/${taskId}/user/${userId}/assigned`);
-        console.log("assigned task: ", response)
-        return response;
+        const { data } = await api.put(`/api/tasks/${taskId}/user/${userId}/assigned`);
+        console.log("assigned task: ", data)
+        return data;
     } catch (error) {
         console.log(error)
         throw Error(error.response.data.error)
@@ -91,7 +91,7 @@ export const deleteTask = createAsyncThunk("task/deleteTask", async ({ taskId })
     setAuthHeader(localStorage.getItem("jwt"), api)
 
     try {
-        const { response } = await api.delete(`/api/tasks/${taskId}`);
+        const { data } = await api.delete(`/api/tasks/${taskId}`);
         console.log("task deleted successfully")
         return taskId;
     } catch (error) {

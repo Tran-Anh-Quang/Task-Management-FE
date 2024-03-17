@@ -6,12 +6,12 @@ export const submitTask = createAsyncThunk(
         setAuthHeader(localStorage.getItem("jwt"), api)
 
         try {
-            const { response } = await api.post(
+            const { data } = await api.post(
                 `/api/submissions?task_id=${taskId}&github_link=${githubLink}`,
                 {}
             );
-            console.log("submit task: ", response)
-            return response;
+            console.log("submit task: ", data)
+            return data;
         } catch (error) {
             console.log(error)
             throw Error(error.response.data.error)
@@ -23,12 +23,12 @@ export const fetchAllSubmissions = createAsyncThunk(
         setAuthHeader(localStorage.getItem("jwt"), api)
 
         try {
-            const { response } = await api.get(
+            const { data } = await api.get(
                 `/api/submissions`,
                 {}
             );
-            console.log("submitted task: ", response)
-            return response;
+            console.log("submitted task: ", data)
+            return data;
         } catch (error) {
             console.log(error)
             throw Error(error.response.data.error)
@@ -40,12 +40,12 @@ export const fetchAllSubmissionsByTaskId = createAsyncThunk(
         setAuthHeader(localStorage.getItem("jwt"), api)
 
         try {
-            const { response } = await api.get(
+            const { data } = await api.get(
                 `/api/submissions/task/${taskId}`,
                 {}
             );
-            console.log("submitted task: ", response)
-            return response;
+            console.log("submitted task: ", data)
+            return data;
         } catch (error) {
             console.log(error)
             throw Error(error.response.data.error)
@@ -58,12 +58,12 @@ export const acceptDeclineSubmission = createAsyncThunk(
         setAuthHeader(localStorage.getItem("jwt"), api)
 
         try {
-            const { response } = await api.put(
+            const { data } = await api.put(
                 `/api/submissions/${id}?status = ${status}`,
                 {}
             );
-            console.log("accept task: ", response)
-            return response;
+            console.log("accept task: ", data)
+            return data;
         } catch (error) {
             console.log(error)
             throw Error(error.response.data.error)

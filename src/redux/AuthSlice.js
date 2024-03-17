@@ -4,8 +4,8 @@ import axios from 'axios';
 
 export const login = createAsyncThunk("auth/login", async (userData) => {
     try {
-        const { response } = await axios.post(`{BASE_URL}/auth/login`, userData)
-        localStorage.setItem("jwt", response.jwt)
+        const response = await axios.post(`${BASE_URL}/auth/login`, userData)
+        localStorage.setItem("jwt", response.data.jwt)
         console.log("Login successful", response)
         return response;
     } catch (error) {
@@ -16,8 +16,8 @@ export const login = createAsyncThunk("auth/login", async (userData) => {
 
 export const register = createAsyncThunk("auth/register", async (userData) => {
     try {
-        const { response } = await axios.post(`{BASE_URL}/auth/register`, userData)
-        localStorage.setItem("jwt", response.jwt)
+        const response = await axios.post(`${BASE_URL}/auth/register`, userData)
+        localStorage.setItem("jwt", response.data.jwt)
         console.log("Register successful", response)
         return response;
     } catch (error) {
@@ -38,7 +38,7 @@ export const logout = createAsyncThunk("auth/logout", async (userData) => {
 export const getUserProfile = createAsyncThunk("auth/getUserProfile", async (jwt) => {
     setAuthHeader(jwt, api)
     try {
-        const { response } = await api.get(`/api/user/profile`)
+        const response = await api.get(`/api/user/profile`)
         console.log("get user profile success", response)
         return response;
     } catch (error) {
